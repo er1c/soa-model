@@ -67,9 +67,23 @@ class SimpleType extends TypeDefinition {
 	public boolean equals(obj) {
 		obj && ( this.is(obj) ||
 				getClass() == obj.getClass() &&
+
+				// SimpleType
 				restriction == obj.restriction &&
 				union == obj.union &&
-				list == obj.list )
+				list == obj.list &&
+
+				// TypeDefinition 
+				qname == obj.qname &&
+				attributes == obj.attributes &&
+				attributeGroups == obj.attributeGroups &&
+				anyAttribute == obj.anyAttribute &&
+
+				// SchemaComponent 
+				schema == obj.schema &&
+				name == obj.name &&
+				annotation == obj.annotation
+				)
 	}
 
 	protected getElementName(){
